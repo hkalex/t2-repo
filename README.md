@@ -10,6 +10,10 @@
     * In order to make the symbolic link works, must go to the target folder then create links there
         * `cd src/react-app/pages && ln -s ../../../t1-repo/src/react-app/pages/* .`
 
+* Non-reused page
+    * Delete the symbolic link
+    * Copy the file
+    * Add the first line as `// @CLONE ../../../t1-repo/src/react-app/pages/FirstPage.tsx`
 
 
 
