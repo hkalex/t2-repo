@@ -1,8 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
-import { exec } from 'child_process';
-import { convertToObject } from 'typescript';
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -69,7 +67,7 @@ await (async () => {
           let s = path.join(monitorFolder.source, sourceFile);
           let d = path.join(monitorFolder.dest, sourceFile);
           console.log(`Copying files from ${s} to ${d}...`)
-          // fs.copyFile(s, d)
+          fs.copyFile(s, d)
         }
       })
 

@@ -1,5 +1,3 @@
-// @CLONE ../../../t1-repo/src/react-app/pages/FirstPage.tsx
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calculator } from "../../../shared/src/Calculator";
@@ -23,7 +21,7 @@ const FirstPage: React.FC = () => {
 
     return (
         <div>
-            <h1>First Page in T2-Repo</h1>
+            <h1>First Page in T1-Repo</h1>
             {/* <h2>Symbolic link</h2> */}
             <div>
                 <input
