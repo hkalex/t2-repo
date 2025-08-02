@@ -1,3 +1,18 @@
+# Setup
+
+* Run `git submodule update --init --recursive` for the first time
+* Run `npm install` for the first time
+
+
+# Remarks
+
+* Reusing pages are using symbolic links
+    * In order to make the symbolic link works, must go to the target folder then create links there
+        * `cd src/react-app/pages && ln -s ../../../t1-repo/src/react-app/pages/* .`
+
+
+
+
 # React + Vite + Hono + Cloudflare Workers
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
