@@ -12,8 +12,12 @@
 
 * Non-reused page
     * Delete the symbolic link
-    * Copy the file
-    * Add the first line as `// @CLONE ../../../t1-repo/src/react-app/pages/FirstPage.tsx`
+    * Copy the file with the same path
+
+* Sync from t1
+    * `git checkout feature/t1-sync`
+    * `git submodule foreach --recursive git pull --ff-only origin main`
+    * `node script/sync-t1.js`
 
 
 

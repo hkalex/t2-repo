@@ -12,12 +12,19 @@ const FirstPage: React.FC = () => {
     const [num1, setNum1] = React.useState<number>(0);
     const [num2, setNum2] = React.useState<number>(0);
     const [sum, setSum] = React.useState<number | null>(null);
+    const [minus, setMinus] = React.useState<number | null>(null);
 
     const handleSum = () => {
         var calculator = new Calculator();
         var result = calculator.add(num1, num2);
         setSum(result);
     };
+
+    const handleMinus = () => {
+        var calculator = new Calculator();
+        var result = calculator.subtract(num1, num2);
+        setMinus(result)
+    }
 
     return (
         <div>
@@ -58,6 +65,43 @@ const FirstPage: React.FC = () => {
                     placeholder="Result"
                 />
             </div>
+
+            <div>
+                <input
+                    type="number"
+                    value={num1}
+                    onChange={e => {
+                        const value = e.target.value;
+                        if (/^-?\d*\.?\d*$/.test(value)) {
+                            setNum1(value === "" ? 0 : Number(value));
+                        }
+                    }}
+                    placeholder="Enter first number"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                />
+                <input
+                    type="number"
+                    value={num2}
+                    onChange={e => {
+                        const value = e.target.value;
+                        if (/^-?\d*\.?\d*$/.test(value)) {
+                            setNum2(value === "" ? 0 : Number(value));
+                        }
+                    }}
+                    placeholder="Enter second number"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                />
+                <button onClick={handleMinus}>Minus</button>
+                <input
+                    type="text"
+                    value={minus !== null ? minus : ""}
+                    readOnly
+                    placeholder="Result"
+                />
+            </div>
+
             <button onClick={handleNext}>Next</button>
         </div>
     );
