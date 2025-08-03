@@ -13,7 +13,7 @@
 * Non-reused page
     * Delete the symbolic link
     * Copy the file
-    * Add the first line as `// @CLONE ../../../t1-repo/src/react-app/pages/FirstPage.tsx`
+    * Run `git submodule foreach --recursive git pull origin main` to update all submodules.
 
 
 

@@ -13,13 +13,19 @@ const FirstPage: React.FC = () => {
     };
     const [num1, setNum1] = React.useState<number>(0);
     const [num2, setNum2] = React.useState<number>(0);
-    const [sum, setSum] = React.useState<number | null>(null);
+    const [result, setResult] = React.useState<number | null>(null);
+
+    const calculator = new Calculator();
 
     const handleSum = () => {
-        var calculator = new Calculator();
         var result = calculator.add(num1, num2);
-        setSum(result);
+        setResult(result);
     };
+
+    const handleTimes = () => {
+        var result = calculator.multiply(num1, num2);
+        setResult(result);
+    }
 
     return (
         <div>
@@ -53,9 +59,10 @@ const FirstPage: React.FC = () => {
                     pattern="[0-9]*"
                 />
                 <button onClick={handleSum}>Sum</button>
+                <button onClick={handleTimes}>Times</button>
                 <input
                     type="text"
-                    value={sum !== null ? sum : ""}
+                    value={result !== null ? result : ""}
                     readOnly
                     placeholder="Result"
                 />
